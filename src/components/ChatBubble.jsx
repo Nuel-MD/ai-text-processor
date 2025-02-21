@@ -13,28 +13,27 @@ const ChatBubble = ({ message, messages, setMessages }) => {
       const summary = await summarizeText(text);
       updateMessage({ summary });
     } catch (error) {
-      console.log('Summarization failed');
+      console.log('Summarization failed:', error.message);
+      // Add error state handling
     }
   };
 
-  const handleTranslate = async () => {
-    if (!window.Translator) {
-      alert('Translation API not loaded');
-      return;
-    }
-    try {
-      const translation = await translateText(text, selectedLang);
-      // store translation under translations[selectedLang]
-      updateMessage({
-        translations: {
-          ...translations,
-          [selectedLang]: translation,
-        },
-      });
-    } catch (error) {
-      console.log('Translation failed');
-    }
-  };
+  // In your handleTranslate function
+const handleTranslate = async () => {
+  try {
+    // Get detected language from message (should already be set by language detection)
+    const translation = await translateText(text, detectedLang, selectedLang);
+    
+    updateMessage({
+      translations: {
+        ...translations,
+        [selectedLang]: translation,
+      },
+    });
+  } catch (error) {
+    console.log('Translation failed:', error.message);
+  }
+};
 
   const updateMessage = (updates) => {
     setMessages((prev) =>
@@ -46,15 +45,16 @@ const ChatBubble = ({ message, messages, setMessages }) => {
     <div className='bubble-container' style={{ marginBottom: '1rem' }}>
       <div className="bubble">
         {text}
-      </div>
-      <div className="bubble-footer">
-      {detectedLang && (
+        {detectedLang && (
         <p className="detected-lang">Language detected: {detectedLang}</p>
       )}
+      </div>
+      <div className="bubble-footer">
+
 
       {/* Show Summarize if > 150 chars and in English */}
       {showSummarize && (
-        <button onClick={handleSummarize}>
+        <button className='summarize'  onClick={handleSummarize}>
           Summarize
         </button>
       )}
@@ -88,7 +88,7 @@ const ChatBubble = ({ message, messages, setMessages }) => {
       {translations &&
         Object.entries(translations).map(([lang, trans]) => (
           <div key={lang} className="translation-bubble">
-            <strong>{lang.toUpperCase()}:</strong> {trans}
+            <strong> Hi 😊💕 This is your translation in {lang.toUpperCase()}:</strong> {trans}
           </div>
         ))}
     </div>

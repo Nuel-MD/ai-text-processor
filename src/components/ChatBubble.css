@@ -7,6 +7,7 @@
         border-radius: 20px 2px 25px 20px;
         background-color: rgba(255, 255, 255, 0.089);
         margin-bottom: 5px;
+        max-width: 600px;
     }
     .bubble-container {
         display: flex;
@@ -37,3 +38,36 @@
     padding: 10px;
     border-radius: 5px;
   }
+
+.detected-lang{
+    color: rgba(255, 255, 255, 0.541);
+    font-size: 0.8rem;
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+.summarize {
+    background-color: transparent;
+    color: rgba(25, 223, 107, 0.685);
+
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+.summarize:hover {
+    background-color: rgba(255, 255, 255, 0.342);
+}
+.Trans:hover {
+    background-color: rgba(255, 255, 255, 0.342);
+}
+.translation-bubble{
+    align-self: flex-start;
+    text-align: end;
+    color: white;
+    padding: 15px;
+    max-width: fit-content;
+    border-radius: 2px 25px 25px 20px;
+    background-color: rgba(49, 219, 120, 0.644);
+    margin-bottom: 5px;
+    max-width: 600px;
+}
