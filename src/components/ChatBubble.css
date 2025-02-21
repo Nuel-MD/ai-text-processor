@@ -1,0 +1,39 @@
+
+    .bubble {
+        text-align: end;
+        color: white;
+        padding: 15px;
+        max-width: fit-content;
+        border-radius: 20px 2px 25px 20px;
+        background-color: rgba(255, 255, 255, 0.089);
+        margin-bottom: 5px;
+    }
+    .bubble-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .bubble-footer {
+        display: flex;
+        gap: 5px;
+    }
+    select {
+        background-color: transparent;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.089);
+        padding: 10px;
+        border-radius: 5px;
+        outline: none;
+    }
+    select option {
+        background-color: black;
+        color: white;
+    }
+    
+  .Trans {
+    background-color: transparent;
+    color: rgba(25, 223, 107, 0.685);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    padding: 10px;
+    border-radius: 5px;
+  }

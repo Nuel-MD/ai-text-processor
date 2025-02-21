@@ -1,0 +1,53 @@
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background-color:  #1B1B1B ; /* your green background */
+    position: relative;
+  }
+  .card {
+    background-color: 	hsla(0, 0%, 11%, 0.8);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 400px;
+    text-align: center;
+    filter: brightness(1.4);
+    
+  }
+
+  .btn {
+    background-color: green;
+    filter: brightness(0.7);
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0px;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Overpass", serif;
+    padding: 10px;
+    border: none !important;
+  }
+  .btn:hover{
+    filter: brightness(1);
+    color: white;
+  }
+.card h1{
+  color: white;
+  font-size: 40px;
+}
+.card p{
+  color: rgba(255, 255, 255, 0.281);
+  font-size: 20px;
+  font-family: "Overpass", serif;
+}
+@media (max-width: 768px) {
+  .landing-container {
+    padding: 20px;
+  }
+}
+
